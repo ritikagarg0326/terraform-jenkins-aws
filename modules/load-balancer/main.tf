@@ -1,15 +1,12 @@
 resource "aws_lb" "this" {
-  name               = var.name
+  name               = "jenkins-via-terraform-alb"
   internal           = false
   load_balancer_type = "application"
-  security_groups    = [var.security_group_id]
-  subnets            = [var.public_subnet_id]
 
-  tags = {
-    Name = var.name
-  }
+  security_groups = [var.security_group_id]
+
+  subnets = var.public_subnet_ids
 }
-
 resource "aws_lb_target_group" "jenkins" {
   name     = "${var.name}-tg"
   port     = var.target_port
