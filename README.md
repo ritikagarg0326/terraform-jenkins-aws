@@ -91,3 +91,4 @@ Before using it beyond a temporary lab:
 ## Destroy
 
 terraform destroy
+## in future adding eks cluster module in same vpc 
