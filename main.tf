@@ -59,7 +59,7 @@ module "load_balancer" {
 
   vpc_id = module.vpc.vpc_id
 
-  # ALB needs both subnets in different AZs/multiple availibility zones
+  # ALB needs both subnets in different AZs/multiple availability zones
   public_subnet_ids = module.vpc.public_subnet_ids
 
   security_group_id = module.security_group.security_group_id
